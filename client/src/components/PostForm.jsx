@@ -29,9 +29,10 @@ const PostForm = ({ post, onSubmit, loading }) => {
     const fetchCategories = async () => {
       try {
         const response = await categoryService.getAllCategories();
-        setCategories(response.data);
+        setCategories(response.data || []);
       } catch (error) {
         console.error('Failed to fetch categories:', error);
+        setCategories([]);
       }
     };
     fetchCategories();
@@ -97,7 +98,7 @@ const PostForm = ({ post, onSubmit, loading }) => {
           required
         >
           <option value="">Select a category</option>
-          {categories.map(category => (
+          {categories && categories.map(category => (
             <option key={category._id} value={category._id}>
               {category.name}
             </option>

@@ -20,7 +20,9 @@ const seedData = async () => {
     const categories = await Category.create([
       { name: 'Technology', description: 'Tech-related posts' },
       { name: 'Lifestyle', description: 'Lifestyle and personal posts' },
-      { name: 'Travel', description: 'Travel experiences and tips' }
+      { name: 'Travel', description: 'Travel experiences and tips' },
+      { name: 'Food', description: 'Food and cooking posts' },
+      { name: 'Health', description: 'Health and fitness posts' }
     ]);
 
     // Create a sample user
