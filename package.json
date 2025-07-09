@@ -1,0 +1,12 @@
+{
+  "name": "mern-blog-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"pnpm --filter server dev\" \"pnpm --filter client dev\"",
+    "install:all": "pnpm install",
+    "seed": "pnpm --filter server seed"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
